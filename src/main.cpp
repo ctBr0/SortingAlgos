@@ -1,5 +1,5 @@
 # include <iostream>
-# include "SortingAlgos.h"
+# include "../include/SortingAlgos.h"
 # include <vector>
 # include <chrono>
 

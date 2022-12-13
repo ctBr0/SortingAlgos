@@ -1,7 +1,7 @@
 # include <iostream>
 # include <vector>
 # include <cmath>
-# include "SortingAlgos.h"
+# include "../include/SortingAlgos.h"
 
 using namespace std;
 
