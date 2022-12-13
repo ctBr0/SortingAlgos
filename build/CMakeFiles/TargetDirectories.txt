@@ -1,5 +1,0 @@
-/Users/ctbro/SortingAlgos/build/CMakeFiles/edit_cache.dir
-/Users/ctbro/SortingAlgos/build/CMakeFiles/rebuild_cache.dir
-/Users/ctbro/SortingAlgos/build/src/CMakeFiles/SortingAlgos.dir
-/Users/ctbro/SortingAlgos/build/src/CMakeFiles/edit_cache.dir
-/Users/ctbro/SortingAlgos/build/src/CMakeFiles/rebuild_cache.dir
