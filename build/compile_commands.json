@@ -1,0 +1,12 @@
+[
+{
+  "directory": "/Users/ctbro/SortingAlgos/build/src",
+  "command": "/usr/bin/clang++  -I/include  -g -std=c++11 -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.0.sdk -o CMakeFiles/SortingAlgos.dir/main.cpp.o -c /Users/ctbro/SortingAlgos/src/main.cpp",
+  "file": "/Users/ctbro/SortingAlgos/src/main.cpp"
+},
+{
+  "directory": "/Users/ctbro/SortingAlgos/build/src",
+  "command": "/usr/bin/clang++  -I/include  -g -std=c++11 -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.0.sdk -o CMakeFiles/SortingAlgos.dir/SortingAlgos.cpp.o -c /Users/ctbro/SortingAlgos/src/SortingAlgos.cpp",
+  "file": "/Users/ctbro/SortingAlgos/src/SortingAlgos.cpp"
+}
+]
