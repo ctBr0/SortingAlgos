@@ -227,7 +227,7 @@ vector<int> merge(vector<int> part1, vector<int> part2)
 
 /*
 Heap sort
-Heap: ordered binary tree
+Heap: complete binary tree
 Max heap: parent > child
 1. Build max heap (O(n)) - creates max heap from unsorted vector to find the largest element
 2. Remove largest element
@@ -270,23 +270,36 @@ heapify(array a, int i)
         heapify(a,max)
 */
 
+vector<int> heapSort(vector<int> A)
+{
+    buildMaxHeap(A);
+    int n = A.size();
+
+    for (int i=n;i>1;i--)
+    {
+        int temp = A[0];
+        A[0] = A[i-1];
+        A[i-1] = temp; 
+        heapify(A,1,i-1);
+    }
+    return A;
+}
+
 void buildMaxHeap(vector<int> A)
 {
-    int n=A.size();
-
-    for (int i=floor(n/2);i>0;i--)
+    for (int i=floor(A.size()/2);i>0;i--)
     {
-        heapify(A,i);
+        heapify(A,i,A.size());
     }
 }
 
-void heapify(vector<int> A, int parent)
+void heapify(vector<int> A, int parent, int size)
 {
     int leftChild = 2*parent;
     int rightChild = 2*parent+1;
     int max;
 
-    if (leftChild<A.size() && (A[leftChild]>A[parent]))
+    if (leftChild<size && (A[leftChild-1]>A[parent-1]))
     {
         max = leftChild;
     }
@@ -294,33 +307,17 @@ void heapify(vector<int> A, int parent)
     {
         max = parent;
     }
-
-    if (rightChild<=A.size() && (A[rightChild]>A[max]))
+    
+    if (rightChild<=size && (A[rightChild-1]>A[max-1]))
     {
         max = rightChild;
     }
 
     if (max!=parent)
     {
-        int temp = A[parent];
-        A[parent] = A[max];
-        A[max] = temp;
-        heapify(A,max);
+        int temp = A[parent-1];
+        A[parent-1] = A[max-1];
+        A[max-1] = temp;
+        heapify(A,max,size);
     }
-}
-
-vector<int> heapSort(vector<int> A)
-{
-    buildMaxHeap(A);
-    int n = A.size();
-
-    for (int i=n;i>0;i--)
-    {
-        int temp = A[1];
-        A[1] = A[i];
-        A[i] = temp;
-        n--;
-        heapify(A,i);
-    }
-    return A;
 }
