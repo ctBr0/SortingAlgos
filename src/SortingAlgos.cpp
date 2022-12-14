@@ -21,12 +21,6 @@ Insertion sort
 3. If key element < predecessor, swap and compare it to the elements before
 
 Time complexity: O(n^2)
-
-for i:1 to length(A)-1
-    j=i
-    while j>0 and A[j-1]>A[j]
-        swap A[j] and A[j-1]
-        j=j-1
 */
 
 vector<int> insertionSort(vector<int> A)
@@ -53,14 +47,6 @@ Selection sort
 4. Swap current minimum to sorted partition when current element reaches the end of array
 
 Time complexity: O(n^2)
-
-for (j=0;j<n-1;j++)
-    int iMin=j;
-    for (i=j+1;i<n;i++)
-        if (a[i]<a[iMin])
-            iMin=i;
-    if (iMin!=j)
-        swap(a[j],a[iMin]);
 */
 
 vector<int> selectionSort(vector<int> A)
@@ -93,11 +79,6 @@ Bubble sort
 4. Sorted partition forms at the end of the vector
 
 Time complexity: O(n^2)
-
-for i from 1 to n
-    for j from 0 to n-1
-        if a[j]>a[j+1]
-            swap(a[j],a[j+1])
 */
 
 vector<int> bubbleSort(vector<int> A)
@@ -124,41 +105,6 @@ Merge sort
 3. Sort and merge
 
 Time complexity: O(nlogn)
-
-mergesort(array a)
-
-    if (n==1)
-        return a
-    
-    array1 = a[0]...a[n/2]
-    array2 = a[n/2+1]...a[n]
-
-    array1 = mergesort(array1)
-    array2 = mergesort(array2)
-
-    return merge(array1,array2)
-
-merge(array a,array b)
-
-    array c
-
-    while (a and b are not empty)
-        if (a[0]>b[0])
-            add b[0] to the end of c
-            remove b[0] from b
-        else
-            add a[0] to the end of c
-            remove a[0] from a
-
-    while (a has elements)
-        add a[0] to the end of c
-        remove a[0] from a
-    
-    while (b has elements)
-        add b[0] t the end of c
-        remove b[0] from b
-    
-    return c
 */
 
 vector<int> mergeSort(vector<int> A)
@@ -237,37 +183,6 @@ Max heap: parent > child
 6. Sorted partition forms at the end of the vector
 
 Time complexity: O(nlogn)
-
-heapsort(array a)
-
-    buildmaxheap(a)
-
-    for i=n to 1
-        swap (a[1],a[i])
-        n--
-        heapify(a, 1)
-
-buildmaxheap(array a)
-    n = a.size()
-    for i = floor(n/2) to 1
-        heapify(a,i)
-
-heapify(array a, int i)
-
-    left = 2i
-    right = 2i+1
-
-    if (left<=n) and (a[left]>a[i])
-        max = left
-    else
-        max = i
-    
-    if (right<=n) and (a[right]>a[max])
-        max = right
-
-    if (max!=i)
-        swap(a[i],a[max])
-        heapify(a,max)
 */
 
 vector<int> heapSort(vector<int> A)
