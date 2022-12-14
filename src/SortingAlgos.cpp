@@ -272,7 +272,7 @@ heapify(array a, int i)
 
 vector<int> heapSort(vector<int> A)
 {
-    buildMaxHeap(A);
+    A = buildMaxHeap(A);
     int n = A.size();
 
     for (int i=n;i>1;i--)
@@ -280,26 +280,27 @@ vector<int> heapSort(vector<int> A)
         int temp = A[0];
         A[0] = A[i-1];
         A[i-1] = temp; 
-        heapify(A,1,i-1);
+        A = heapify(A,1,i-1);
     }
     return A;
 }
 
-void buildMaxHeap(vector<int> A)
+vector<int> buildMaxHeap(vector<int> A)
 {
     for (int i=floor(A.size()/2);i>0;i--)
     {
-        heapify(A,i,A.size());
+        A = heapify(A,i,A.size());
     }
+    return A;
 }
 
-void heapify(vector<int> A, int parent, int size)
+vector<int> heapify(vector<int> A, int parent, int size)
 {
     int leftChild = 2*parent;
     int rightChild = 2*parent+1;
     int max;
 
-    if (leftChild<size && (A[leftChild-1]>A[parent-1]))
+    if (leftChild<=size && (A[leftChild-1]>A[parent-1]))
     {
         max = leftChild;
     }
@@ -318,6 +319,10 @@ void heapify(vector<int> A, int parent, int size)
         int temp = A[parent-1];
         A[parent-1] = A[max-1];
         A[max-1] = temp;
-        heapify(A,max,size);
+        return heapify(A,max,size);
+    }
+    else
+    {
+        return A;
     }
 }
