@@ -41,7 +41,7 @@ int main(int argc, char** argv)
     }
 
     //original array
-    cout << "Original: " << endl;
+    cout << "Original: (" + to_string(original.size()) + " elements)" << endl;
     printVector(original);
 
     //array to be sorted
@@ -91,6 +91,15 @@ int main(int argc, char** argv)
     cout << "Heap sort: (O(nlogn))" << endl;
     start = steady_clock::now();
     newArr = heapSort(original);
+    stop = steady_clock::now();
+    duration = duration_cast<microseconds>(stop - start);
+    cout << "Time taken by function: " << duration.count() << " microseconds" << endl;
+    printVector(newArr);
+
+    //heap sort
+    cout << "Quick sort: (O(nlogn))" << endl;
+    start = steady_clock::now();
+    newArr = quickSort(original,0,original.size());
     stop = steady_clock::now();
     duration = duration_cast<microseconds>(stop - start);
     cout << "Time taken by function: " << duration.count() << " microseconds" << endl;

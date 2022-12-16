@@ -15,5 +15,7 @@ vector<int> bubbleSort(vector<int>);
 vector<int> mergeSort(vector<int>);
 vector<int> merge(vector<int>, vector<int>);
 vector<int> heapSort(vector<int>);
+vector<int> quickSort(vector<int>, int, int);
+int partitionRandom(vector<int> &A, int, int);
 
 # endif

@@ -241,3 +241,62 @@ vector<int> heapify(vector<int> A, int parent, int size)
         return A;
     }
 }
+
+/*
+Quick Sort
+Element is in sorted position if all elements on the left are smaller and elements on the right are greater
+
+Time complexity: O(nlogn)
+*/
+
+vector<int> quickSort(vector<int> A, int low, int high)
+{
+    int j;
+    if (low<high)
+    {
+        j = partitionRandom(A, low, high);
+        A = quickSort(A, low, j);
+        A = quickSort(A, j+1, high);
+        return A;
+    }
+    else
+    {
+        return A;
+    }
+}
+
+int partitionRandom(vector<int> &A, int low, int high)
+{
+    int pivot = low + rand() % (high - low);
+    int temp = A[pivot];
+    A[pivot] = A[low];
+    A[low] = temp;
+    pivot = low;
+
+    int i = low;
+    int j = high;
+
+    while (i<j)
+    {
+        do
+        {
+            i++;
+        } while(A[i] <= A[pivot]);
+        do
+        {
+            j--;
+        } while (A[j] > A[pivot]);
+        if (i < j)
+        {
+            int temp = A[j];
+            A[j] = A[i];
+            A[i] = temp;
+        }
+    }
+
+    temp = A[j];
+    A[j] = A[low];
+    A[low] = temp;
+
+    return j;
+}
